@@ -1,0 +1,51 @@
+phys3071 as03 problem 3 melsom 42593249
+
+josh@ubuntu:~/worksheets/as03-legendrepolynomials$ ./as03-1
+This program will calculate the Legendre polynomial P_n(x) evaluated 
+at x. Please follow the instructions carefully.please enter any real number x and a positive integer n
+(in the form x, n)
+0.0, 1
+P_n = 0.00000e+00
+
+josh@ubuntu:~/worksheets/as03-legendrepolynomials$ ./as03-1
+This program will calculate the Legendre polynomial P_n(x) evaluated 
+at x. Please follow the instructions carefully.please enter any real number x and a positive integer n
+(in the form x, n)
+0.5,1
+P_n = 5.00000e-01
+
+josh@ubuntu:~/worksheets/as03-legendrepolynomials$ ./as03-1
+This program will calculate the Legendre polynomial P_n(x) evaluated 
+at x. Please follow the instructions carefully.please enter any real number x and a positive integer n
+(in the form x, n)
+0.5,5
+P_n = 8.98438e-02
+
+josh@ubuntu:~/worksheets/as03-legendrepolynomials$ ./as03-1
+This program will calculate the Legendre polynomial P_n(x) evaluated 
+at x. Please follow the instructions carefully.please enter any real number x and a positive integer n
+(in the form x, n)
+-0.5,10
+P_n = -1.88229e-01
+
+josh@ubuntu:~/worksheets/as03-legendrepolynomials$ ./as03-1
+This program will calculate the Legendre polynomial P_n(x) evaluated 
+at x. Please follow the instructions carefully.please enter any real number x and a positive integer n
+(in the form x, n)
+1.0, 5
+P_n = 1.00000e+00
+
+josh@ubuntu:~/worksheets/as03-legendrepolynomials$ ./as03-1
+This program will calculate the Legendre polynomial P_n(x) evaluated 
+at x. Please follow the instructions carefully.please enter any real number x and a positive integer n
+(in the form x, n)
+-1.0,10
+P_n = 1.00000e+00
+
+josh@ubuntu:~/worksheets/as03-legendrepolynomials$ ./as03-1
+This program will calculate the Legendre polynomial P_n(x) evaluated 
+at x. Please follow the instructions carefully.please enter any real number x and a positive integer n
+(in the form x, n)
+10.0,10
+P_n = 1.76188e+12
+

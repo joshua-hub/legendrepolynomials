@@ -1,0 +1,85 @@
+//phys3071 melsom 42593249 assignment 3
+
+/*
+Inputs: The program asks the user for a positive integer n. My program does not
+check the validity of the numbers and will complete calculations even if the
+correct types aren't entered. It is up to the user to follow the instructions.
+
+Calculations: The program solves for the nth order Legendre polynomial solved
+for x = -1 to 1 in 101 steps (100 divisions). The program solves the
+polynomials using a recursive function. This minimises memory and storage
+requirements.
+
+Outputs: The program outputs the solutions to a file, where the user is asked
+to specify the filename. The structure of the data is a column of x values and
+a column of P(x) values, separated by a tab and each line is separated with a
+line break.
+
+compiled as gcc as03-melsom-42593249-1.c -o as03-1 -lm
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+double Pn(double x,int n);
+
+int main () {
+  //variables:  n is for the maximum polynomial to calculate, i and j are used
+  //for matrix dimension counting. x is array elements for calculations,
+  //divisor is used for setting values within x, fname is the filename used for
+  //output. P, a 1x101 vector is also created. fp is a pointer for the data
+  //file.
+  int n,i;
+  double x[101], P[101], divisor = -1.0;
+  char fname[128];
+  FILE *fp;
+
+  //Asking the user for n, the warning about valid values of n is explicit.
+  printf("\nThis program will solve the nth Legendre polynomial between "
+         "-1 and 1 and store the values \nin a *.dat file. Warning: It is up "
+         "to the user to enter a valid value.\n");
+  printf("Please enter a positive integer n: ");
+  scanf("%d", &n);
+
+  //populating the x array with 101 evenly spaced
+  //numbers from -1 to 1 inclusive.
+  for (i=0;i<101;i++) {
+    x[i] = divisor;
+    divisor = divisor + 0.02;
+  }
+
+  //requesting the file name from the user and associating a pointer fp.
+  printf("A data file  will be created in the current directory. Please type"
+         " the file name including the extension .dat.\n");
+  scanf("%s",fname);
+  fp = fopen(fname, "w");
+
+  //fills the P array by calling the function Pn and parsing elements of x
+  //and the value of n and prints the data to file.
+  for(i = 0; i < 101; i++) {
+    P[i] = Pn(x[i], n);
+    fprintf(fp,"%11lf %11lf\n",x[i], P[i]);
+  }
+  fprintf(fp,"\n");
+  fclose(fp);
+}
+
+
+//Function to solve the Legendre polynomials recursively.
+//x and n are the same variables as is passed to the function and P is the
+//internal variable that is returned.
+double Pn(double x,int n) {
+  double P;
+
+  if (n==0) {
+    P=1.0;
+  }
+  else if (n==1) {
+    P=x;
+  }
+  else {
+    P=((2.0*n-1.0)*x*Pn(x, n-1)-(n-1.0)*Pn(x, n-2))/(1.0*n);
+  }
+  return P;
+}

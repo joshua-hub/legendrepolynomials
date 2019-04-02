@@ -1,0 +1,19 @@
+//test
+#include<math.h>
+#include<stdio.h>
+#include<stdlib.h>
+
+
+int main () {
+int twodim[2][2][2];
+  int i,j;
+  
+  
+  for(i = 0; i < 2; i++) {
+    for(j = 0; j < 2; j++) {
+        twodim[i][j] = i+j;
+        printf("%d ", twodim[i][j]);
+    }
+  printf("\n"); 
+  }
+}
